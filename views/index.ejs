@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Administrador de Tareas</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <form action="/create" method="POST">
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre">
+      <input type="text" name="id" id="id"><!--hidden-->
+      <label for="cadena">Cadena Mundial</label>
+      <input type="text" name="cadena">
+      <label for="anioFuncion">Año en Funcion</label>
+      <input type="text" name="anioFuncion">
+      <button type="button" id="guardar">Guardar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cadena Mundial</th>
+          <th>Año de Funcionamiento</th>
+        </tr>
+      </thead>
+
+      <tbody class="t-body">
+
+      </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="javascript/main.js"></script>
   </body>
 </html>
