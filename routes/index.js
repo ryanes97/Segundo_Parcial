@@ -1,18 +1,19 @@
 var express = require('express');
 var router = express.Router();
-var bancoModel = require('../modelos/Banco');
+var bancoModel = require('../modelos/banco');
 
 //crear bancos
 router.post('/create',(req, res, next)=> {
   console.log(req.body);
   var newBanco = new bancoModel();
   newBanco.nombre = req.body.nombre;
-  newBanco.cadena = req.body.cadenaMundial;
-  newBanco.aniFuncion = req.body.anioFuncion;
+  newBanco.cadena = req.body.cadena;
+  newBanco.anioFuncion = req.body.anioFuncion;
+  console.log(newBanco);
 
-  newBanco.save((error, banco)=>{
+  newBanco.save((error, newBanco)=>{
     if(error) return res.status(500).json({success: false, message: "No funciona"})
-    if(banco) return res.status(200).json({success: true, message:"Si funciona", banco})
+    if(newBanco) return res.status(200).json({success: true, message:"Si funciona", newBanco})
   });
 });
 
