@@ -53,7 +53,7 @@ router.get('/banco/:id', (req, res, next)=>{
 })
 
 //dame todos los bancos
-router.get('/banco',(req, res, next)=>{
+router.get('/bancos',(req, res, next)=>{
   bancoModel.find({},(error, bancos)=>{
     if(error) return res.status(500).json({success: false, message: "No Funciona"});
     if(bancos){
